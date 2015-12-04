@@ -26,7 +26,8 @@
         object IValueConverter.ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
         {
             Visibility visibility = (Visibility)value;
-            return Visibility.Visible == visibility ? true : false;
+            bool converted = Visibility.Visible == visibility ? true : false;
+            return _isInverse ? !converted : converted;
         }
     }
 }
