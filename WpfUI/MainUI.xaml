@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="WpfUI.MainUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfUI"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        
+        <Image Grid.Row="0"
+               Source="Images/bender_200.png" HorizontalAlignment="Center" Stretch="None"
+               Margin="0,20"/>
+
+        <ScrollViewer Grid.Row="1" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Auto">
+            <!-- Uncomment this to change the width of the scroll bar -->
+            <!--
+            <ScrollViewer.Resources>
+                <sys:Double x:Key="{x:Static SystemParameters.VerticalScrollBarWidthKey}">10</sys:Double>
+            </ScrollViewer.Resources>
+            -->
+            
+            <StackPanel Orientation="Vertical" Margin="20,0">
+                
+                <Border Background="White" BorderBrush="Gray" BorderThickness="1" Margin="0,10" Padding="20,10" CornerRadius="10">
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="User Name"/>
+                        <TextBox Margin="0,5,0,0" />
+                        <TextBlock Margin="0,5,0,0" Text="Password"/>
+                        <TextBox Margin="0,5,0,0" />
+                        <Button HorizontalAlignment="Center" Margin="0,10,0,0">
+                            <TextBlock Margin="10,2" Text="Login"/>
+                        </Button>
+                    </StackPanel>
+                </Border>
+
+                <Border Background="White" BorderBrush="Gray" BorderThickness="1" CornerRadius="10" Margin="0,10" Padding="20,10">
+                    <StackPanel Orientation="Vertical">
+                        <Image HorizontalAlignment="Center" Stretch="None" Source="Images/bender_300.png"/>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>
